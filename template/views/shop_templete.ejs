@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>PPP PET SHOP</h1>
+    <div style="background-color: aquamarine;margin: 20px;padding: 20px;">
+        <form action="/insert" method="GET">
+            <label for="">name :</label>
+            <input type="text" name="name" id="" required />
+            <label for="">price :</label>
+            <input type="number" name="price" step="0.1" id="" required />
+            <label for="">stock :</label>
+            <input type="number" name="stock" id="" required />
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <h2>All products in database!</h2>
+    <% products.forEach((product)=>{ %>
+        <div style="background-color: aquamarine;margin: 10px;padding: 10px;display: flex;">
+            <form method="get" >
+                <div style="width: 50px;"> id: <%= product.id %>
+                </div>
+                <div style="width: 250px;"> name: <%= product.name %>
+                </div>
+                <div style="width: 180px;"> price: <%= product.price %>
+                </div>
+                <div style="width: 180px;"> stock: <%= product.stock %>
+                </div>
+                <div style="width: 100px;">
+                    <button type="submit" formaction="/updatestock/<%= product.id%>/1">ADD</button>
+                </div>
+                <div style="width: 100px;">
+                    <button type="submit" formaction="/updatestock/<%= product.id%>/1">ADD</button>
+                </div>
+                <div style="width: 100px;"> 
+                    <button type="submit" formaction="/updatestock/<%= product.id%>/1">ADD</button>
+
+                </div>
+            </form>
+        </div>
+        <% }); %>
+</body>
+
+</html>
